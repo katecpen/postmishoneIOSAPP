@@ -14,6 +14,7 @@ class RegisterViewController : UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     
     
     override func viewDidLoad() {
@@ -25,11 +26,12 @@ class RegisterViewController : UIViewController {
         // Set up a new user on our Firebase database
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
+        guard let name = nameTextField.text else {return}
         
         Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
             if error == nil && user != nil {
                 let userID = Auth.auth().currentUser!.uid
-                let values = ["email": email, "password": password] as [String : Any] // TODO: add username (change password)
+                let values = ["username": name,"email": email, "password": password] as [String : Any] // TODO: add username (change password)
                 self.registerUserIntoDatabase(userID, values: values as [String : AnyObject])
 
                 self.navigationController?.popViewController(animated: false)

@@ -20,10 +20,11 @@ class MissionDescriptionViewController: UIViewController {
     
     
     @IBOutlet weak var missionTitleLabel: UILabel!
-    @IBOutlet weak var missionSubtitleLabel: UILabel!
     @IBOutlet weak var missionSubtitleTextView: UITextView!
     @IBOutlet weak var missionRewardLabel: UILabel!
-    @IBOutlet weak var missionPosterLabel: UILabel!
+    
+    @IBOutlet weak var userPicOfPost: UIImageView! // user picture of the poster (newly added)
+    @IBOutlet weak var usernameOfPost: UILabel! // username of the poster (newly added)
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -35,10 +36,44 @@ class MissionDescriptionViewController: UIViewController {
         ref = Database.database().reference() // Firebase Reference
         //        ref.child("users").child ///TODO: current does not pull anything from the database
         missionTitleLabel.text = missionTitle
-        missionSubtitleLabel.text = subtitle
         missionSubtitleTextView.text = subtitle
         missionRewardLabel.text = reward
-        missionPosterLabel.text = posterID
+        
+        //changes@@@@@@@@@@@@@@@@@@@@@@@
+        // reference to firebase storage
+        let store = Storage.storage()
+        // refer our storage service
+        let storeRef = store.reference(forURL: "gs://postmishone.appspot.com")
+        // access files and paths
+        let userProfilesRef = storeRef.child("images/profiles/\(posterID)")
+        
+        // fetch the username
+        let username = Database.database().reference().child("Users").child(userID)
+        print(username)
+        
+        username.observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let name = value?["username"] as? String ?? ""
+            self.usernameOfPost.text = name
+        })
+    
+        
+        // check if the picture exist in the database
+        userProfilesRef.getData(maxSize: 1*1024*1024) { (data, error) in
+            if data != nil && error == nil{
+                self.userPicOfPost.image = UIImage(data: data!)
+            } else {
+                let none = Storage.storage().reference(forURL: "gs://postmishone.appspot.com").child("images/profiles/yolo123empty.jpg")
+                none.getData(maxSize: 1*1024*1024, completion: { (data_none, error_none) in
+                    if error_none != nil {
+                        print("error fetching the none profile pic")
+                    }
+                })
+            }
+            
+        }
+        
+        
         
     }
     
