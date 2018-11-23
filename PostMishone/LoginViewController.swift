@@ -66,7 +66,6 @@ class LoginViewController : UIViewController, FBSDKLoginButtonDelegate {
                 print(err!)
                 return
             }
-            print("Successfully Added a New User to the Database")
         })
     }
     

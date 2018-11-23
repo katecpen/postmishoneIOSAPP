@@ -527,9 +527,9 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGl-vT-2nD">
-                                <rect key="frame" x="134" y="204" width="106" height="30"/>
+                                <rect key="frame" x="136" y="204" width="102" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Change Picture"/>
+                                <state key="normal" title="Upload Picture"/>
                                 <connections>
                                     <action selector="imagePickerTapped:" destination="I4e-yC-0TT" eventType="touchUpInside" id="lL6-yV-s55"/>
                                 </connections>
