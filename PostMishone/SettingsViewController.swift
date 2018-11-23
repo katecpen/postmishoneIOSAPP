@@ -19,6 +19,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var uiname: UILabel!
     @IBOutlet weak var uiemail: UILabel!
     
+    var imagePicker:UIImagePickerController!
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         self.navigationController?.isNavigationBarHidden = false
@@ -93,15 +95,20 @@ class SettingsViewController: UIViewController {
                 // no user is signed in
                 print("No user is signed in")
             }
+        } else {
+            // do these if it is not signed in using facebook
+            let user = Auth.auth().currentUser
+            let name = user?.displayName
+            let email = user?.email
+            self.uiname.text = name
+            self.uiemail.text = email
         }
-        
-        // do these if it is not signed in using facebook
-        let user = Auth.auth().currentUser
-        let name = user?.displayName
-        let email = user?.email
-        self.uiname.text = name
-        self.uiemail.text = email
         view.accessibilityIdentifier = "SettingsViewController" // Identifier for UI Testing
+        
+        imagePicker = UIImagePickerController()
+        imagePicker.allowsEditing = true
+        imagePicker.sourceType = .photoLibrary
+        imagePicker.delegate = self
 
     }
     
@@ -114,6 +121,29 @@ class SettingsViewController: UIViewController {
         FBSDKAccessToken.setCurrent(nil)
         self.dismiss(animated: true, completion: nil)
         print("Log out success")
+    }
+    
+    @IBAction func imagePickerTapped(_ sender: Any) {
+        self.present(imagePicker, animated: true, completion: nil)
+        
+    }
+    
+}
+
+extension SettingsViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    func imagePickerControllerDidCancel(_ pciker: UIImagePickerController) {
+        pciker.dismiss(animated: true, completion: nil)
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        
+        if let pickedImage = info[UIImagePickerController.InfoKey.editedImage] as? UIImage {
+            self.uiimgvpropic.image = pickedImage
+        }
+        
+        
+        picker.dismiss(animated: true, completion: nil)
     }
     
 }
