@@ -49,7 +49,6 @@ class MissionDescriptionViewController: UIViewController {
         
         // fetch the username
         let username = Database.database().reference().child("Users").child(userID)
-        print(username)
         
         username.observeSingleEvent(of: .value, with: { (snapshot) in
             let value = snapshot.value as? NSDictionary

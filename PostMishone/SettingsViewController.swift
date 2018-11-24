@@ -34,13 +34,20 @@ class SettingsViewController: UIViewController {
         self.uiimgvpropic.clipsToBounds = true
         
         let user = Auth.auth().currentUser
-        let name = user?.displayName
         let email = user?.email
         let uid = user?.uid
         
         // user signed in
-        self.uiname.text = name
         self.uiemail.text = email
+        
+        // fetch the username
+        let username = Database.database().reference().child("Users").child(Auth.auth().currentUser!.uid)
+        
+        username.observeSingleEvent(of: .value, with: { (snapshot) in
+            let value = snapshot.value as? NSDictionary
+            let name = value?["username"] as? String ?? ""
+            self.uiname.text = name
+        })
         
         // reference to firebase storage
         let store = Storage.storage()
