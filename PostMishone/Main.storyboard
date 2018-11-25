@@ -215,7 +215,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6QJ-ww-xxN">
-                                <rect key="frame" x="157" y="325" width="62" height="30"/>
+                                <rect key="frame" x="156" y="380" width="62" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Continue"/>
                                 <connections>
@@ -239,6 +239,13 @@
                                     <action selector="emailTextField:" destination="n8l-2h-Mfp" eventType="editingDidEnd" id="9Uj-PV-q5g"/>
                                 </connections>
                             </textField>
+                            <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" text="At least 6 characters long" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="20T-Kj-8Lr">
+                                <rect key="frame" x="87" y="318" width="200" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <nil key="textColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="8"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="MNV-Ir-bJy"/>
@@ -252,7 +259,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VRN-iN-jkv" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <exit id="n8l-2h-Mfp" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-361" y="-13"/>
+            <point key="canvasLocation" x="-362.39999999999998" y="-13.043478260869566"/>
         </scene>
         <!--Main Navigation Controller-->
         <scene sceneID="UOL-qj-QTh">
