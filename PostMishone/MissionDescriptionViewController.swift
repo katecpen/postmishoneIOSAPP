@@ -66,6 +66,8 @@ class MissionDescriptionViewController: UIViewController {
                 none.getData(maxSize: 1*1024*1024, completion: { (data_none, error_none) in
                     if error_none != nil {
                         print("error fetching the none profile pic")
+                    } else {
+                        self.userPicOfPost.image = UIImage(data: data_none!)
                     }
                 })
             }

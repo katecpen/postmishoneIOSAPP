@@ -102,6 +102,15 @@ class SettingsViewController: UIViewController {
                             return
                         }
                     })
+                } else {
+                    let none = Storage.storage().reference(forURL: "gs://postmishone.appspot.com").child("images/profiles/yolo123empty.jpg")
+                    none.getData(maxSize: 1*1024*1024, completion: { (data_none, error_none) in
+                        if error_none != nil {
+                            print("error fetching the none profile pic")
+                        } else {
+                            self.uiimgvpropic.image = UIImage(data: data_none!)
+                        }
+                    })
                 }
             }
         }
