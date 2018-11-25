@@ -26,8 +26,8 @@
 		57DA66172174320C008B9E06 /* DescribeMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DA66162174320C008B9E06 /* DescribeMissionViewController.swift */; };
 		6C43459821A1000A00B82FCB /* PostMishoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C43459721A1000A00B82FCB /* PostMishoneTests.swift */; };
 		6C4345A621A112C600B82FCB /* PostMishoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4345A521A112C600B82FCB /* PostMishoneUITests.swift */; };
-		6C44EDE421A6850300BAD91E /* SearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C44EDE321A6850300BAD91E /* SearchTableViewController.swift */; };
-		6C44EDE621A6854300BAD91E /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C44EDE521A6854300BAD91E /* TableViewCell.swift */; };
+		6C44EDE821AA2C4400BAD91E /* SearchMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C44EDE721AA2C4400BAD91E /* SearchMission.swift */; };
+		6C44EDEA21AA4E5C00BAD91E /* ViewMyMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C44EDE921AA4E5C00BAD91E /* ViewMyMission.swift */; };
 		6C472E5521A0DD37004BF060 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C472E5421A0DD37004BF060 /* GoogleService-Info.plist */; };
 		77A638633C42D201C8CFE6E0 /* libPods-PostMishoneTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 285096C4932F1E1BD0F4A1BB /* libPods-PostMishoneTests.a */; };
 /* End PBXBuildFile section */
@@ -78,8 +78,8 @@
 		6C4345A321A112C600B82FCB /* PostMishoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PostMishoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C4345A521A112C600B82FCB /* PostMishoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMishoneUITests.swift; sourceTree = "<group>"; };
 		6C4345A721A112C600B82FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6C44EDE321A6850300BAD91E /* SearchTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchTableViewController.swift; sourceTree = "<group>"; };
-		6C44EDE521A6854300BAD91E /* TableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
+		6C44EDE721AA2C4400BAD91E /* SearchMission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMission.swift; sourceTree = "<group>"; };
+		6C44EDE921AA4E5C00BAD91E /* ViewMyMission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMyMission.swift; sourceTree = "<group>"; };
 		6C472E5421A0DD37004BF060 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		A5CAC99B488AF4732501837D /* Pods-PostMishone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostMishone.release.xcconfig"; path = "Pods/Target Support Files/Pods-PostMishone/Pods-PostMishone.release.xcconfig"; sourceTree = "<group>"; };
 		CCA40B5F46E43CAFFE6669BA /* Pods-PostMishone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostMishone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PostMishone/Pods-PostMishone.debug.xcconfig"; sourceTree = "<group>"; };
@@ -154,8 +154,8 @@
 				57B533312192D743004C89B4 /* BaseTabBarController.swift */,
 				57B533372192ECBB004C89B4 /* MissionsTableViewController.swift */,
 				57B533392192F1E4004C89B4 /* MyMissionsTableViewController.swift */,
-				6C44EDE321A6850300BAD91E /* SearchTableViewController.swift */,
-				6C44EDE521A6854300BAD91E /* TableViewCell.swift */,
+				6C44EDE921AA4E5C00BAD91E /* ViewMyMission.swift */,
+				6C44EDE721AA2C4400BAD91E /* SearchMission.swift */,
 				57DA66032173DCFE008B9E06 /* PostMishone.entitlements */,
 				6C472E5421A0DD37004BF060 /* GoogleService-Info.plist */,
 				57DA65EF2173628E008B9E06 /* Info.plist */,
@@ -472,17 +472,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C44EDE621A6854300BAD91E /* TableViewCell.swift in Sources */,
 				57B533322192D743004C89B4 /* BaseTabBarController.swift in Sources */,
 				57DA66072173E71A008B9E06 /* MainViewController.swift in Sources */,
 				57DA66052173E27C008B9E06 /* MainAppScreen.swift in Sources */,
-				6C44EDE421A6850300BAD91E /* SearchTableViewController.swift in Sources */,
 				57DA65FC21736538008B9E06 /* LoginViewController.swift in Sources */,
+				6C44EDE821AA2C4400BAD91E /* SearchMission.swift in Sources */,
 				57B533382192ECBB004C89B4 /* MissionsTableViewController.swift in Sources */,
 				57DA66002173716D008B9E06 /* RegisterViewController.swift in Sources */,
 				57DA65FA21736532008B9E06 /* MainNavigationController.swift in Sources */,
 				57DA65E62173628C008B9E06 /* ViewController.swift in Sources */,
 				57B53330218EE2CD004C89B4 /* MissionDescriptionViewController.swift in Sources */,
+				6C44EDEA21AA4E5C00BAD91E /* ViewMyMission.swift in Sources */,
 				57DA66172174320C008B9E06 /* DescribeMissionViewController.swift in Sources */,
 				57DA65E42173628C008B9E06 /* AppDelegate.swift in Sources */,
 				57B5333A2192F1E4004C89B4 /* MyMissionsTableViewController.swift in Sources */,

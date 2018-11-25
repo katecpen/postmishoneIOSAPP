@@ -58,6 +58,7 @@ class DescribeMissionViewController: UIViewController {
         ref?.child("Users").child(userID).child("MissionPosts").child(missionID!).setValue(missionID!)
         
         
+        
         print("Mission Posted!")
         
         self.navigationController?.popViewController(animated: true)

@@ -15,12 +15,12 @@ class MyMissionsTableViewController: UITableViewController {
     var missionIDS = [String]()
     var missionNames = [String]()
     let userID = Auth.auth().currentUser!.uid
+    var selectedMission = ""
 
     override func viewDidLoad() {
         super.viewDidLoad()
         ref = Database.database().reference() //Firebase Reference
-
-        ref?.child("Users").child(userID).child("MissionPosts").observeSingleEvent(of: .value, with: { snapshot in
+        ref?.child("Users").child(userID).child("MissionPosts").observe(.value, with: { (snapshot) in
             for child in snapshot.children {
                 let snap = child as! DataSnapshot
                 let missionID = snap.value as! String
@@ -34,8 +34,7 @@ class MyMissionsTableViewController: UITableViewController {
                         self.missionNames.append(missionName)
                         self.tableView.reloadData()
                     }
-                })
-                
+        })
                 self.missionIDS.append(missionID)
             }
         })
@@ -54,5 +53,19 @@ class MyMissionsTableViewController: UITableViewController {
 
         return cell
     }
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedMission = missionIDS[indexPath.row]
+        print(selectedMission)
+        performSegue(withIdentifier: "toViewMyMission", sender: self)
+
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as? ViewMyMission
+        destination?.missionID = selectedMission
+    }
 
 }
+
+
