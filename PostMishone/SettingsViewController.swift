@@ -19,8 +19,6 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.accessibilityIdentifier = "SettingsViewController" // Identifier for UI Testing
-
     }
     
     override func didReceiveMemoryWarning() {
@@ -28,13 +26,8 @@ class SettingsViewController: UIViewController {
 }
     
     @IBAction func handleLogOut(_ sender: Any) {
-        let firebaseAuth = Auth.auth()
-        do {
-            try firebaseAuth.signOut()
-        } catch let signOutError as NSError {
-            print ("Error signing out: %@", signOutError)
-        }
-        
+        print("logout")
+        try! Auth.auth().signOut()
         self.dismiss(animated: true, completion: nil)
     }
     

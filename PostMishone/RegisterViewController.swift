@@ -31,6 +31,7 @@ class RegisterViewController : UIViewController {
                 let userID = Auth.auth().currentUser!.uid
                 let values = ["email": email, "password": password] as [String : Any] // TODO: add username (change password)
                 self.registerUserIntoDatabase(userID, values: values as [String : AnyObject])
+
                 self.navigationController?.popViewController(animated: false)
                 
 

@@ -25,8 +25,6 @@ class DescribeMissionViewController: UIViewController {
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.accessibilityIdentifier = "DescribeMissionViewController" // Identifier for UI Testing
-
         missionName.delegate = self
         missionDescription.delegate = self
         reward.delegate = self
@@ -55,8 +53,7 @@ class DescribeMissionViewController: UIViewController {
         ref?.child("PostedMissions").child(missionID!).setValue(["Latitude": latitude, "Longitude": longitude, "UserID": userID, "timeStamp": timeStamp, "missionName": missionName.text!, "missionDescription": missionDescription.text!, "reward": reward.text!, "missionID": missionID!])
         
         // Add to https://postmishone.firebaseio.com/users/(currentuserid)/
-        ref?.child("Users").child(userID).child("MissionPosts").child(missionID!).setValue(missionID!)
-        
+ref?.child("Users").child(userID).child("MissionPosts").child(missionID!).setValue(missionID!)
         
         
         print("Mission Posted!")

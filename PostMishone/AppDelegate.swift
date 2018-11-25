@@ -11,30 +11,7 @@ import Firebase
 import GoogleSignIn
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
-    func sign(_ signIn: GIDSignIn!, didSignInFor user: GIDGoogleUser!, withError error: Error!) {
-        if let err = error {
-            print("Failed to log into Google: ", err)
-            return
-        }
-        print("Google login success", user)
-        
-        guard let idToken = user.authentication.idToken else { return }
-        guard let accessToken = user.authentication.accessToken else { return }
-        let credentials = GoogleAuthProvider.credential(withIDToken: idToken, accessToken: accessToken)
-        
-        Auth.auth().signInAndRetrieveData(with: credentials) { (authResult, error) in
-            if let error = error {
-                print("Failed to create Firebase User with Google Account: ", error)
-                return
-            }
-            // User is signed in
-            print("Succesfully logged into Firebase with Google")
-//            let mainStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            self.window?.rootViewController?.performSegue(withIdentifier: "toMainAppScreen", sender: nil)
-            
-        }
-    }
+class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     
@@ -43,17 +20,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, GIDSignInDelegate {
         FirebaseApp.configure() // Initiate database
         
         // Google Sign In
-        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
-        GIDSignIn.sharedInstance().delegate = self
+//        GIDSignIn.sharedInstance().clientID = FirebaseApp.app()?.options.clientID
+//        GIDSignIn.sharedInstance().delegate = self
         
         return true
-    }
-    
-    func application(_ application: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any])
-        -> Bool {
-            return GIDSignIn.sharedInstance().handle(url,
-                                                     sourceApplication:options[UIApplication.OpenURLOptionsKey.sourceApplication] as? String,
-                                                     annotation: [:])
     }
 
     func applicationWillResignActive(_ application: UIApplication) {

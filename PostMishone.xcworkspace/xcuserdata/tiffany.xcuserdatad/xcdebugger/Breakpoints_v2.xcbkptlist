@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "0"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PostMishone/ChatTableViewController.swift"
+            timestampString = "564875958.642741"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "observeUserMessages()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PostMishone/ChatLogTableViewController.swift"
+            timestampString = "564539958.430297"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "15"
+            endingLineNumber = "15"
+            landmarkName = "user"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PostMishone/ChatLogTableViewController.swift"
+            timestampString = "564539958.430851"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "16"
+            endingLineNumber = "16"
+            landmarkName = "user"
+            landmarkType = "24">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PostMishone/ChatLogViewController.swift"
+            timestampString = "564844479.08705"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "14"
+            endingLineNumber = "14"
+            landmarkName = "usera"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PostMishone.ChatLogViewController.init(collectionViewLayout: __C.UICollectionViewLayout) -&gt; PostMishone.ChatLogViewController"
+                  moduleName = "PostMishone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiffany/Downloads/CPEN321/postmishoneIOSAPP/PostMishone/ChatLogViewController.swift"
+                  timestampString = "564541483.539497"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "35">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PostMishone.ChatLogViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; PostMishone.ChatLogViewController"
+                  moduleName = "PostMishone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiffany/Downloads/CPEN321/postmishoneIOSAPP/PostMishone/ChatLogViewController.swift"
+                  timestampString = "564541483.542891"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "57">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PostMishone.ChatLogViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;PostMishone.ChatLogViewController&gt;"
+                  moduleName = "PostMishone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiffany/Downloads/CPEN321/postmishoneIOSAPP/PostMishone/ChatLogViewController.swift"
+                  timestampString = "564541483.545803"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "14"
+                  endingLineNumber = "14"
+                  offsetFromSymbolStart = "50">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PostMishone/ChatLogViewController.swift"
+            timestampString = "564844479.087178"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "23"
+            endingLineNumber = "23"
+            landmarkName = "inputTextField"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PostMishone.ChatLogViewController.inputTextField.getter : __C.UITextField"
+                  moduleName = "PostMishone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiffany/Downloads/CPEN321/postmishoneIOSAPP/PostMishone/ChatLogViewController.swift"
+                  timestampString = "564542092.581481"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "162">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; __C.UITextField in PostMishone.ChatLogViewController.inputTextField.getter : __C.UITextField"
+                  moduleName = "PostMishone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiffany/Downloads/CPEN321/postmishoneIOSAPP/PostMishone/ChatLogViewController.swift"
+                  timestampString = "564542092.586145"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "22"
+                  endingLineNumber = "22"
+                  offsetFromSymbolStart = "26">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PostMishone.ChatLogViewController.inputTextField.setter : __C.UITextField"
+                  moduleName = "PostMishone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiffany/Downloads/CPEN321/postmishoneIOSAPP/PostMishone/ChatLogViewController.swift"
+                  timestampString = "564542092.5920219"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "128">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PostMishone.ChatLogViewController.init(collectionViewLayout: __C.UICollectionViewLayout) -&gt; PostMishone.ChatLogViewController"
+                  moduleName = "PostMishone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiffany/Downloads/CPEN321/postmishoneIOSAPP/PostMishone/ChatLogViewController.swift"
+                  timestampString = "564542092.596655"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "131">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PostMishone.ChatLogViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; PostMishone.ChatLogViewController"
+                  moduleName = "PostMishone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiffany/Downloads/CPEN321/postmishoneIOSAPP/PostMishone/ChatLogViewController.swift"
+                  timestampString = "564542092.59997"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "154">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PostMishone.ChatLogViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;PostMishone.ChatLogViewController&gt;"
+                  moduleName = "PostMishone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiffany/Downloads/CPEN321/postmishoneIOSAPP/PostMishone/ChatLogViewController.swift"
+                  timestampString = "564542092.603352"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "21"
+                  endingLineNumber = "21"
+                  offsetFromSymbolStart = "123">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PostMishone/ChatLogViewController.swift"
+            timestampString = "564844479.087274"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "251"
+            endingLineNumber = "251"
+            landmarkName = "handleSend()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "PostMishone/NewMessageTableViewController.swift"
+            timestampString = "564826153.580111"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "98"
+            endingLineNumber = "98"
+            landmarkName = "NewMessageTableViewController"
+            landmarkType = "3">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PostMishone.NewMessageTableViewController.init(style: __C.UITableViewStyle) -&gt; PostMishone.NewMessageTableViewController"
+                  moduleName = "PostMishone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiffany/Downloads/CPEN321/postmishoneIOSAPP/PostMishone/NewMessageTableViewController.swift"
+                  timestampString = "564801525.69721"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "879">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PostMishone.NewMessageTableViewController.init(nibName: Swift.Optional&lt;Swift.String&gt;, bundle: Swift.Optional&lt;__C.NSBundle&gt;) -&gt; PostMishone.NewMessageTableViewController"
+                  moduleName = "PostMishone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiffany/Downloads/CPEN321/postmishoneIOSAPP/PostMishone/NewMessageTableViewController.swift"
+                  timestampString = "564801525.700143"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "880">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "PostMishone.NewMessageTableViewController.init(coder: __C.NSCoder) -&gt; Swift.Optional&lt;PostMishone.NewMessageTableViewController&gt;"
+                  moduleName = "PostMishone"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/tiffany/Downloads/CPEN321/postmishoneIOSAPP/PostMishone/NewMessageTableViewController.swift"
+                  timestampString = "564801525.703619"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "100"
+                  endingLineNumber = "100"
+                  offsetFromSymbolStart = "853">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

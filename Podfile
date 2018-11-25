@@ -7,26 +7,25 @@ target 'PostMishone' do
 
   # Pods for PostMishone
 
-  pod 'Firebase'
+  # pod 'Firebase'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
-  pod 'Firebase/Core'
-  pod 'Firebase/Messaging'
   pod 'SVProgressHUD'
   pod 'GoogleSignIn'
+  pod 'Firebase/Storage'
+  pod 'PayPal-iOS-SDK'
+
+ target 'PostMishoneTests' do 
+
+inherit! :search_paths
+
+  pod 'Firebase'
+  
+
 
 end
 
-target 'PostMishoneTests' do 
-
-  pod 'Firebase'
-  pod 'Firebase/Auth'
-  pod 'Firebase/Database'
-  pod 'Firebase/Core'
-  pod 'Firebase/Messaging'
-  pod 'SVProgressHUD'
-  pod 'GoogleSignIn'
-
-
 end
+
+
 

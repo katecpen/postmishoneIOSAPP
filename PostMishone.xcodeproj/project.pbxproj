@@ -24,12 +24,14 @@
 		57DA66072173E71A008B9E06 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DA66062173E71A008B9E06 /* MainViewController.swift */; };
 		57DA660B2173F0FD008B9E06 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DA660A2173F0FD008B9E06 /* SettingsViewController.swift */; };
 		57DA66172174320C008B9E06 /* DescribeMissionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57DA66162174320C008B9E06 /* DescribeMissionViewController.swift */; };
-		6C43459821A1000A00B82FCB /* PostMishoneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C43459721A1000A00B82FCB /* PostMishoneTests.swift */; };
-		6C4345A621A112C600B82FCB /* PostMishoneUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4345A521A112C600B82FCB /* PostMishoneUITests.swift */; };
-		6C44EDE821AA2C4400BAD91E /* SearchMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C44EDE721AA2C4400BAD91E /* SearchMission.swift */; };
-		6C44EDEA21AA4E5C00BAD91E /* ViewMyMission.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C44EDE921AA4E5C00BAD91E /* ViewMyMission.swift */; };
 		6C472E5521A0DD37004BF060 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 6C472E5421A0DD37004BF060 /* GoogleService-Info.plist */; };
-		77A638633C42D201C8CFE6E0 /* libPods-PostMishoneTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 285096C4932F1E1BD0F4A1BB /* libPods-PostMishoneTests.a */; };
+		9220982BE701735AA6F3FAF5 /* Pods_PostMishoneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E75CF88EFF3AB5CFF13D3D2D /* Pods_PostMishoneTests.framework */; };
+		983089E521AA915500576684 /* ChatMessageCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 983089E421AA915500576684 /* ChatMessageCell.swift */; };
+		9833811A21A9E316007C1673 /* UserCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9833811921A9E316007C1673 /* UserCell.swift */; };
+		9833812021AA33E3007C1673 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9833811F21AA33E2007C1673 /* Extensions.swift */; };
+		98338A2B21A5E93800BB31D0 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98338A2A21A5E93800BB31D0 /* ChatTableViewController.swift */; };
+		98338A2D21A5F5E300BB31D0 /* NewMessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98338A2C21A5F5E300BB31D0 /* NewMessageTableViewController.swift */; };
+		98338A2F21A60BBC00BB31D0 /* ChatLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 98338A2E21A60BBC00BB31D0 /* ChatLogViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -40,18 +42,10 @@
 			remoteGlobalIDString = 57DA65DF2173628C008B9E06;
 			remoteInfo = PostMishone;
 		};
-		6C4345A821A112C600B82FCB /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 57DA65D82173628C008B9E06 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 57DA65DF2173628C008B9E06;
-			remoteInfo = PostMishone;
-		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		085D46E870176043DAA2868A /* Pods-PostMishoneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostMishoneTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PostMishoneTests/Pods-PostMishoneTests.debug.xcconfig"; sourceTree = "<group>"; };
-		285096C4932F1E1BD0F4A1BB /* libPods-PostMishoneTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-PostMishoneTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		43CF2668F6CC1F0322346541 /* Pods-PostMishoneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostMishoneTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-PostMishoneTests/Pods-PostMishoneTests.release.xcconfig"; sourceTree = "<group>"; };
 		57B5332F218EE2CD004C89B4 /* MissionDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDescriptionViewController.swift; sourceTree = "<group>"; };
 		57B533312192D743004C89B4 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
@@ -73,16 +67,16 @@
 		57DA660A2173F0FD008B9E06 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		57DA66162174320C008B9E06 /* DescribeMissionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DescribeMissionViewController.swift; sourceTree = "<group>"; };
 		6C43459521A1000A00B82FCB /* PostMishoneTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PostMishoneTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C43459721A1000A00B82FCB /* PostMishoneTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMishoneTests.swift; sourceTree = "<group>"; };
-		6C43459921A1000A00B82FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6C4345A321A112C600B82FCB /* PostMishoneUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PostMishoneUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		6C4345A521A112C600B82FCB /* PostMishoneUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostMishoneUITests.swift; sourceTree = "<group>"; };
-		6C4345A721A112C600B82FCB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		6C44EDE721AA2C4400BAD91E /* SearchMission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMission.swift; sourceTree = "<group>"; };
-		6C44EDE921AA4E5C00BAD91E /* ViewMyMission.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewMyMission.swift; sourceTree = "<group>"; };
 		6C472E5421A0DD37004BF060 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		983089E421AA915500576684 /* ChatMessageCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatMessageCell.swift; sourceTree = "<group>"; };
+		9833811921A9E316007C1673 /* UserCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserCell.swift; sourceTree = "<group>"; };
+		9833811F21AA33E2007C1673 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		98338A2A21A5E93800BB31D0 /* ChatTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
+		98338A2C21A5F5E300BB31D0 /* NewMessageTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewMessageTableViewController.swift; sourceTree = "<group>"; };
+		98338A2E21A60BBC00BB31D0 /* ChatLogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatLogViewController.swift; sourceTree = "<group>"; };
 		A5CAC99B488AF4732501837D /* Pods-PostMishone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostMishone.release.xcconfig"; path = "Pods/Target Support Files/Pods-PostMishone/Pods-PostMishone.release.xcconfig"; sourceTree = "<group>"; };
 		CCA40B5F46E43CAFFE6669BA /* Pods-PostMishone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-PostMishone.debug.xcconfig"; path = "Pods/Target Support Files/Pods-PostMishone/Pods-PostMishone.debug.xcconfig"; sourceTree = "<group>"; };
+		E75CF88EFF3AB5CFF13D3D2D /* Pods_PostMishoneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PostMishoneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ED0D737BD60431C697C0D242 /* Pods_PostMishone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_PostMishone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -99,14 +93,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				77A638633C42D201C8CFE6E0 /* libPods-PostMishoneTests.a in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6C4345A021A112C600B82FCB /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				9220982BE701735AA6F3FAF5 /* Pods_PostMishoneTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -117,8 +104,6 @@
 			isa = PBXGroup;
 			children = (
 				57DA65E22173628C008B9E06 /* PostMishone */,
-				6C43459621A1000A00B82FCB /* PostMishoneTests */,
-				6C4345A421A112C600B82FCB /* PostMishoneUITests */,
 				57DA65E12173628C008B9E06 /* Products */,
 				E75A84CA55486A039DED647B /* Pods */,
 				57E3193D8AEDDE5E51448767 /* Frameworks */,
@@ -130,7 +115,6 @@
 			children = (
 				57DA65E02173628C008B9E06 /* PostMishone.app */,
 				6C43459521A1000A00B82FCB /* PostMishoneTests.xctest */,
-				6C4345A321A112C600B82FCB /* PostMishoneUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -146,6 +130,8 @@
 				57DA65F921736532008B9E06 /* MainNavigationController.swift */,
 				57DA65FB21736538008B9E06 /* LoginViewController.swift */,
 				57DA65FF2173716D008B9E06 /* RegisterViewController.swift */,
+				6C472E5421A0DD37004BF060 /* GoogleService-Info.plist */,
+				57DA65EF2173628E008B9E06 /* Info.plist */,
 				57DA66042173E27C008B9E06 /* MainAppScreen.swift */,
 				57DA66062173E71A008B9E06 /* MainViewController.swift */,
 				57DA660A2173F0FD008B9E06 /* SettingsViewController.swift */,
@@ -153,12 +139,14 @@
 				57B5332F218EE2CD004C89B4 /* MissionDescriptionViewController.swift */,
 				57B533312192D743004C89B4 /* BaseTabBarController.swift */,
 				57B533372192ECBB004C89B4 /* MissionsTableViewController.swift */,
-				57B533392192F1E4004C89B4 /* MyMissionsTableViewController.swift */,
-				6C44EDE921AA4E5C00BAD91E /* ViewMyMission.swift */,
-				6C44EDE721AA2C4400BAD91E /* SearchMission.swift */,
 				57DA66032173DCFE008B9E06 /* PostMishone.entitlements */,
-				6C472E5421A0DD37004BF060 /* GoogleService-Info.plist */,
-				57DA65EF2173628E008B9E06 /* Info.plist */,
+				57B533392192F1E4004C89B4 /* MyMissionsTableViewController.swift */,
+				98338A2A21A5E93800BB31D0 /* ChatTableViewController.swift */,
+				98338A2C21A5F5E300BB31D0 /* NewMessageTableViewController.swift */,
+				98338A2E21A60BBC00BB31D0 /* ChatLogViewController.swift */,
+				9833811921A9E316007C1673 /* UserCell.swift */,
+				9833811F21AA33E2007C1673 /* Extensions.swift */,
+				983089E421AA915500576684 /* ChatMessageCell.swift */,
 			);
 			path = PostMishone;
 			sourceTree = "<group>";
@@ -167,27 +155,9 @@
 			isa = PBXGroup;
 			children = (
 				ED0D737BD60431C697C0D242 /* Pods_PostMishone.framework */,
-				285096C4932F1E1BD0F4A1BB /* libPods-PostMishoneTests.a */,
+				E75CF88EFF3AB5CFF13D3D2D /* Pods_PostMishoneTests.framework */,
 			);
 			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		6C43459621A1000A00B82FCB /* PostMishoneTests */ = {
-			isa = PBXGroup;
-			children = (
-				6C43459721A1000A00B82FCB /* PostMishoneTests.swift */,
-				6C43459921A1000A00B82FCB /* Info.plist */,
-			);
-			path = PostMishoneTests;
-			sourceTree = "<group>";
-		};
-		6C4345A421A112C600B82FCB /* PostMishoneUITests */ = {
-			isa = PBXGroup;
-			children = (
-				6C4345A521A112C600B82FCB /* PostMishoneUITests.swift */,
-				6C4345A721A112C600B82FCB /* Info.plist */,
-			);
-			path = PostMishoneUITests;
 			sourceTree = "<group>";
 		};
 		E75A84CA55486A039DED647B /* Pods */ = {
@@ -232,7 +202,7 @@
 				6C43459121A1000A00B82FCB /* Sources */,
 				6C43459221A1000A00B82FCB /* Frameworks */,
 				6C43459321A1000A00B82FCB /* Resources */,
-				013A7A5973BDE6C2A2DD48D8 /* [CP] Copy Pods Resources */,
+				C9B5B401754ABA85B061BF83 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -243,24 +213,6 @@
 			productName = PostMishoneTests;
 			productReference = 6C43459521A1000A00B82FCB /* PostMishoneTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		6C4345A221A112C600B82FCB /* PostMishoneUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 6C4345AA21A112C600B82FCB /* Build configuration list for PBXNativeTarget "PostMishoneUITests" */;
-			buildPhases = (
-				6C43459F21A112C600B82FCB /* Sources */,
-				6C4345A021A112C600B82FCB /* Frameworks */,
-				6C4345A121A112C600B82FCB /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				6C4345A921A112C600B82FCB /* PBXTargetDependency */,
-			);
-			name = PostMishoneUITests;
-			productName = PostMishoneUITests;
-			productReference = 6C4345A321A112C600B82FCB /* PostMishoneUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
 
@@ -284,10 +236,6 @@
 						CreatedOnToolsVersion = 10.1;
 						TestTargetID = 57DA65DF2173628C008B9E06;
 					};
-					6C4345A221A112C600B82FCB = {
-						CreatedOnToolsVersion = 10.1;
-						TestTargetID = 57DA65DF2173628C008B9E06;
-					};
 				};
 			};
 			buildConfigurationList = 57DA65DB2173628C008B9E06 /* Build configuration list for PBXProject "PostMishone" */;
@@ -305,7 +253,6 @@
 			targets = (
 				57DA65DF2173628C008B9E06 /* PostMishone */,
 				6C43459421A1000A00B82FCB /* PostMishoneTests */,
-				6C4345A221A112C600B82FCB /* PostMishoneUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -329,42 +276,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		6C4345A121A112C600B82FCB /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		013A7A5973BDE6C2A2DD48D8 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-PostMishoneTests/Pods-PostMishoneTests-resources.sh",
-				"${PODS_ROOT}/GTMOAuth2/Source/Touch/GTMOAuth2ViewTouch.xib",
-				"${PODS_ROOT}/GoogleSignIn/Resources/GoogleSignIn.bundle",
-				"${PODS_ROOT}/SVProgressHUD/SVProgressHUD/SVProgressHUD.bundle",
-			);
-			name = "[CP] Copy Pods Resources";
-			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GTMOAuth2ViewTouch.nib",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/GoogleSignIn.bundle",
-				"${TARGET_BUILD_DIR}/${UNLOCALIZED_RESOURCES_FOLDER_PATH}/SVProgressHUD.bundle",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PostMishoneTests/Pods-PostMishoneTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		29D6388DF149E9AF640CE8D5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -409,6 +323,30 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PostMishone/Pods-PostMishone-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
+		C9B5B401754ABA85B061BF83 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-PostMishoneTests/Pods-PostMishoneTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities-00567490/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-PostMishoneTests/Pods-PostMishoneTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		E8CAA7D4B69A5A21084C2FA7 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -440,14 +378,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-PostMishone/Pods-PostMishone-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GTMOAuth2-framework/GTMOAuth2.framework",
-				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-framework/GTMSessionFetcher.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-framework/GoogleToolboxForMac.framework",
-				"${BUILT_PRODUCTS_DIR}/GoogleUtilities-framework/GoogleUtilities.framework",
-				"${BUILT_PRODUCTS_DIR}/Protobuf-framework/Protobuf.framework",
-				"${BUILT_PRODUCTS_DIR}/SVProgressHUD-framework/SVProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/leveldb-library-framework/leveldb.framework",
-				"${BUILT_PRODUCTS_DIR}/nanopb-framework/nanopb.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMOAuth2/GTMOAuth2.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities-Environment-Logger/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/SVProgressHUD/SVProgressHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
@@ -457,10 +393,8 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SVProgressHUD.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -478,17 +412,21 @@
 				57DA66072173E71A008B9E06 /* MainViewController.swift in Sources */,
 				57DA66052173E27C008B9E06 /* MainAppScreen.swift in Sources */,
 				57DA65FC21736538008B9E06 /* LoginViewController.swift in Sources */,
-				6C44EDE821AA2C4400BAD91E /* SearchMission.swift in Sources */,
+				98338A2D21A5F5E300BB31D0 /* NewMessageTableViewController.swift in Sources */,
 				57B533382192ECBB004C89B4 /* MissionsTableViewController.swift in Sources */,
 				57DA66002173716D008B9E06 /* RegisterViewController.swift in Sources */,
+				9833812021AA33E3007C1673 /* Extensions.swift in Sources */,
 				57DA65FA21736532008B9E06 /* MainNavigationController.swift in Sources */,
+				98338A2F21A60BBC00BB31D0 /* ChatLogViewController.swift in Sources */,
 				57DA65E62173628C008B9E06 /* ViewController.swift in Sources */,
 				57B53330218EE2CD004C89B4 /* MissionDescriptionViewController.swift in Sources */,
-				6C44EDEA21AA4E5C00BAD91E /* ViewMyMission.swift in Sources */,
 				57DA66172174320C008B9E06 /* DescribeMissionViewController.swift in Sources */,
 				57DA65E42173628C008B9E06 /* AppDelegate.swift in Sources */,
 				57B5333A2192F1E4004C89B4 /* MyMissionsTableViewController.swift in Sources */,
+				9833811A21A9E316007C1673 /* UserCell.swift in Sources */,
+				983089E521AA915500576684 /* ChatMessageCell.swift in Sources */,
 				57DA660B2173F0FD008B9E06 /* SettingsViewController.swift in Sources */,
+				98338A2B21A5E93800BB31D0 /* ChatTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,15 +434,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C43459821A1000A00B82FCB /* PostMishoneTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		6C43459F21A112C600B82FCB /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				6C4345A621A112C600B82FCB /* PostMishoneUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -515,11 +444,6 @@
 			isa = PBXTargetDependency;
 			target = 57DA65DF2173628C008B9E06 /* PostMishone */;
 			targetProxy = 6C43459A21A1000A00B82FCB /* PBXContainerItemProxy */;
-		};
-		6C4345A921A112C600B82FCB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 57DA65DF2173628C008B9E06 /* PostMishone */;
-			targetProxy = 6C4345A821A112C600B82FCB /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -658,14 +582,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PostMishone/PostMishone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7698B5F9DT;
+				DEVELOPMENT_TEAM = 62Y272VFVK;
 				INFOPLIST_FILE = PostMishone/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vitol.PostMishone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vitol.PostMishone10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -679,14 +603,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = PostMishone/PostMishone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7698B5F9DT;
+				DEVELOPMENT_TEAM = 62Y272VFVK;
 				INFOPLIST_FILE = PostMishone/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.4;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.vitol.PostMishone;
+				PRODUCT_BUNDLE_IDENTIFIER = com.vitol.PostMishone10;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -737,46 +661,6 @@
 			};
 			name = Release;
 		};
-		6C4345AB21A112C600B82FCB /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7698B5F9DT;
-				INFOPLIST_FILE = PostMishoneUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = vitol.PostMishoneUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = PostMishone;
-			};
-			name = Debug;
-		};
-		6C4345AC21A112C600B82FCB /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7698B5F9DT;
-				INFOPLIST_FILE = PostMishoneUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = vitol.PostMishoneUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = PostMishone;
-			};
-			name = Release;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -803,15 +687,6 @@
 			buildConfigurations = (
 				6C43459C21A1000A00B82FCB /* Debug */,
 				6C43459D21A1000A00B82FCB /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		6C4345AA21A112C600B82FCB /* Build configuration list for PBXNativeTarget "PostMishoneUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				6C4345AB21A112C600B82FCB /* Debug */,
-				6C4345AC21A112C600B82FCB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

@@ -34,12 +34,13 @@ import CoreLocation
 
 class MainAppScreen: UIViewController {
     var ref: DatabaseReference!
+    var dataBaseHandle: DatabaseHandle!
     var missionPostsArray = [missionAnnotation]()
     var selectedAnnotation: missionAnnotation?
     var longitude : Double = 0.0
     var latitude : Double = 0.0
     let userID = Auth.auth().currentUser!.uid
-//    var tempanno: missionAnnotation?
+    var tempanno: missionAnnotation?
     
     @IBOutlet weak var mapView: MKMapView!
     
@@ -53,79 +54,49 @@ class MainAppScreen: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.accessibilityIdentifier = "MainAppScreen" // Identifier for UI Testing
         mapView.delegate = self // For showing annotation when pin is tapped
         ref = Database.database().reference() // Firebase Reference
         checkLocationServices() // Check user location settings -> initiate user map
         
-
-    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        // Retreive Mission Posts
-        retrieveAllMissions()
+//        let mission = missionAnnotation(title: "custom annotation", subtitle: "custom sub", location: CLLocationCoordinate2D(latitude: 49.26044, longitude: -123.24), posterID: "customposterID")
+//        self.mapView.addAnnotation(mission)
         
-        // Listen for user changes to missions
-        listenForMissionChanges()
-        
-        // Listen for deleted missions
-        listenForMissionDeletions()
-        
-    }
-    
-    
-    func retrieveAllMissions() {
-        ref?.child("PostedMissions").observe(.childAdded, with: { (snapshot) in
+        // Retreive Mission Posts and listen for changes
+        dataBaseHandle = ref?.child("PostedMissions").observe(.childAdded, with: { (snapshot) in
             print("FIREBASEobservedAdded")
             // Code to execute when a child is added under "PostedMissions"
             // MARK: missionAnnotation Creation
             // Take value from snapshot and add it to missionPostsArray
             if let dic = snapshot.value as? [String:Any], let timeStamp = dic["timeStamp"] as? Int, let latitude = dic["Latitude"] as? Double, let longitude = dic["Longitude"] as? Double, let missionName = dic["missionName"] as? String, let missionDescription = dic["missionDescription"] as? String, let posterID = dic["UserID"] as? String, let reward = dic["reward"] as? String, let missionID = dic["missionID"] as? String {
-                
+
                 let annotation = missionAnnotation(title: missionName, subtitle: missionDescription, location: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), posterID: posterID, timeStamp: timeStamp, reward: reward, missionID: missionID)
-                
-                // Update mapview with changed missionPostsArray to reflect new mission post
+
+//                self.mapView.addAnnotation(annotation)
+                self.tempanno = annotation
                 self.missionPostsArray.append(annotation)
                 self.mapView.addAnnotations(self.missionPostsArray)
                 
             }
         })
-    }
-    
-    func listenForMissionChanges() {
-        ref?.child("PostedMissions").observe(.childChanged, with: { (snapshot) in
-            print("FIREBASEobservedChanged")
-            print(snapshot)
-            
-            if let dic = snapshot.value as? [String:Any], let timeStamp = dic["timeStamp"] as? Int, let latitude = dic["Latitude"] as? Double, let longitude = dic["Longitude"] as? Double, let missionName = dic["missionName"] as? String, let missionDescription = dic["missionDescription"] as? String, let posterID = dic["UserID"] as? String, let reward = dic["reward"] as? String, let missionID = dic["missionID"] as? String {
-                
-                print("new des: \(missionDescription)")
-                
-                let annotation = missionAnnotation(title: missionName, subtitle: missionDescription, location: CLLocationCoordinate2D(latitude: latitude, longitude: longitude), posterID: posterID, timeStamp: timeStamp, reward: reward, missionID: missionID)
-                
-                let changedMission = self.missionPostsArray.filter{$0.missionID == missionID}
-                let filteredMissions = self.missionPostsArray.filter{$0.missionID != missionID}
-                self.mapView.removeAnnotations(changedMission)
-                self.missionPostsArray = filteredMissions
-                self.missionPostsArray.append(annotation)
-                self.mapView.addAnnotations(self.missionPostsArray)
-            }
-        })
-    }
-    
-    func listenForMissionDeletions() {
+        
+        //Deleting missions
         ref?.child("PostedMissions").observe(.childRemoved, with: { (snapshot) in
             print("FIREBASEobservedRemove")
             if let dic = snapshot.value as? [String:Any], let missionID = dic["missionID"] as? String {
                 
                 let deletedMission = self.missionPostsArray.filter{$0.missionID == missionID}
                 
-                // Update mapview with changed missionPostsArray to reflect deleted mission
                 self.mapView.removeAnnotations(deletedMission)
+                
                 let filteredMissions = self.missionPostsArray.filter{$0.missionID != missionID}
+                
+                
                 self.missionPostsArray = filteredMissions
+                
                 print("DELETE")
+                
             }
+            
         })
     }
     
@@ -199,20 +170,18 @@ class MainAppScreen: UIViewController {
     
     // Prepares pin coordinate information to send to describeMissionViewController
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "toDescribeMission" { // Posting Mission
+        if segue.identifier == "toDescribeMission" {
             let destination = segue.destination as? DescribeMissionViewController
             destination?.latitude = latitude
             destination?.longitude = longitude
         }
-        if segue.identifier == "toMissionDescription" { // Viewing Mission
+        if segue.identifier == "toMissionDescription" {
             let destination = segue.destination as? MissionDescriptionViewController
             destination?.missionTitle = selectedAnnotation?.title ?? ""
             destination?.subtitle = selectedAnnotation?.subtitle ?? ""
             destination?.posterID = selectedAnnotation?.missionPosterID ?? ""
             destination?.reward = selectedAnnotation?.reward ?? ""
             destination?.missionID = selectedAnnotation?.missionID ?? ""
-            destination?.latitude = selectedAnnotation?.coordinate.latitude ?? 0.0
-            destination?.longitude = selectedAnnotation?.coordinate.longitude ?? 0.0
             
         }
     }
