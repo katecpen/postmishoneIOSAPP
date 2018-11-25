@@ -17,7 +17,9 @@ class MissionDescriptionViewController: UIViewController {
     var reward = ""
     var posterID = ""
     var missionID = ""
-    
+    var longitude = 0.0
+    var latitude = 0.0
+    var timeStamp = 0
     
     @IBOutlet weak var missionTitleLabel: UILabel!
     @IBOutlet weak var missionSubtitleLabel: UILabel!
@@ -45,11 +47,10 @@ class MissionDescriptionViewController: UIViewController {
 
     @IBAction func deleteMission(_ sender: Any) {
         print("deleteMission")
-         // Remove from https://postmishone.firebaseio.com/PostedMissions
-        self.ref.child("PostedMissions").child(missionID).removeValue()
-        
         // Remove from https://postmishone.firebaseio.com/users/(currentuserid)/
         self.ref.child("Users").child(posterID).child("MissionPosts").child(missionID).removeValue()
+        
+        deleteVisibleMissionPost()
         
         self.navigationController?.popViewController(animated: true)
         
@@ -59,9 +60,21 @@ class MissionDescriptionViewController: UIViewController {
     @IBAction func acceptMission(_ sender: Any) {
         print("accept mission")
         
-        ref?.child("Users").child(userID).child("AcceptedMissions").child(missionID).setValue(missionID)
+        self.ref.child("AcceptedMissions").child(missionID).setValue(["Latitude": latitude, "Longitude": longitude, "UserID": posterID, "acceptorID" : userID, "timeStamp": timeStamp, "missionName": missionTitle, "missionDescription": subtitle, "reward": reward, "missionID": missionID])
         
+         deleteVisibleMissionPost()
+        
+    ref?.child("Users").child(userID).child("AcceptedMissions").child(missionID).setValue(missionID)
+        
+        ref?.child("Users").child(userID).child("MissionHistory").child(missionID).setValue(missionID)
+
         
     }
     
+    func deleteVisibleMissionPost() {
+        // Remove from https://postmishone.firebaseio.com/PostedMissions
+        self.ref.child("PostedMissions").child(missionID).removeValue()
+        
+
+    }
 }

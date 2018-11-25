@@ -17,6 +17,7 @@ class SearchMission: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        tableView.reloadData()
         self.navigationController?.isNavigationBarHidden = true
     }
     
@@ -31,6 +32,8 @@ class SearchMission: UIViewController {
         ref = Database.database().reference() //Firebase Reference
 
     }
+
+
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
@@ -86,7 +89,6 @@ class Mission {
     let missionName: String
     let missionDescription: String
     let missionReward: String
-    // TODO: add image
     
     init(missionName: String, missionDescription: String, missionReward: String) {
         self.missionName = missionName

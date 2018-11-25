@@ -10,6 +10,8 @@ target 'PostMishone' do
   pod 'Firebase'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
   pod 'SVProgressHUD'
   pod 'GoogleSignIn'
 
@@ -20,6 +22,8 @@ target 'PostMishoneTests' do
   pod 'Firebase'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
   pod 'SVProgressHUD'
   pod 'GoogleSignIn'
 

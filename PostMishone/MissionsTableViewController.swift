@@ -12,7 +12,7 @@ import UIKit
 
 class MissionsTableViewController: UITableViewController {
     
-    let menuItems = ["My Missions", "Accepted Missions", "Mission History", "Search Missions"]
+    let menuItems = ["My Missions", "Accepted Missions", "Mission History"]
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
