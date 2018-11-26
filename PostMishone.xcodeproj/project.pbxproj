@@ -150,14 +150,14 @@
 		57DA65E22173628C008B9E06 /* PostMishone */ = {
 			isa = PBXGroup;
 			children = (
+				57DA65EA2173628E008B9E06 /* Assets.xcassets */,
+				57B533332192DCD6004C89B4 /* Main.storyboard */,
 				57073CEE21AB675200EAAC02 /* ChatLogViewController.swift */,
 				57073CED21AB675200EAAC02 /* ChatMessageCell.swift */,
 				57073CF021AB675200EAAC02 /* ChatTableViewController.swift */,
 				57073CEF21AB675200EAAC02 /* Extensions.swift */,
 				57073CF121AB675200EAAC02 /* NewMessageTableViewController.swift */,
 				57073CEC21AB675100EAAC02 /* UserCell.swift */,
-				57DA65EA2173628E008B9E06 /* Assets.xcassets */,
-				57B533332192DCD6004C89B4 /* Main.storyboard */,
 				57DA65E32173628C008B9E06 /* AppDelegate.swift */,
 				57DA65E52173628C008B9E06 /* ViewController.swift */,
 				57DA65EC2173628E008B9E06 /* LaunchScreen.storyboard */,

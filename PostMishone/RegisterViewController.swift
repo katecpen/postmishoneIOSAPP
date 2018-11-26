@@ -14,6 +14,7 @@ class RegisterViewController : UIViewController {
 
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
+    @IBOutlet weak var nameTextField: UITextField!
     
     
     override func viewDidLoad() {
@@ -25,23 +26,37 @@ class RegisterViewController : UIViewController {
         // Set up a new user on our Firebase database
         guard let email = emailTextField.text else { return }
         guard let password = passwordTextField.text else { return }
+        guard let name = nameTextField.text else {return}
         
-        Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
-            if error == nil && user != nil {
-                let userID = Auth.auth().currentUser!.uid
-                let values = ["email": email, "password": password] as [String : Any] // TODO: add username (change password)
-                self.registerUserIntoDatabase(userID, values: values as [String : AnyObject])
-                self.navigationController?.popViewController(animated: false)
-                
-
-
-                print("Registration Successful")
-
-            } else {
-                print("Error registering")
-                print(error!)
-                
+        if(password.count >= 6) {
+            Auth.auth().createUser(withEmail: email, password: password) { (user, error) in
+                if error == nil && user != nil {
+                    let userID = Auth.auth().currentUser!.uid
+                    let values = ["username": name,"email": email, "password": password] as [String : Any] // TODO: add username (change password)
+                    self.registerUserIntoDatabase(userID, values: values as [String : AnyObject])
+                    
+                    self.navigationController?.popViewController(animated: false)
+                    
+                    
+                    
+                    print("Registration Successful")
+                    
+                } else {
+                    print("Error registering")
+                    print(error!)
+                    
+                }
             }
+        } else {
+            var loginError = UIAlertController(title: "Error", message: "Password too short.", preferredStyle: UIAlertController.Style.alert);
+            
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (Action) in
+                print("OK button tapped")
+            };
+            
+            loginError.addAction(okAction);
+            
+            self.present(loginError, animated: true, completion: nil);
         }
     }
     
