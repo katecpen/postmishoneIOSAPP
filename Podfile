@@ -14,6 +14,12 @@ target 'PostMishone' do
   pod 'Firebase/Messaging'
   pod 'SVProgressHUD'
   pod 'GoogleSignIn'
+  pod 'Firebase/Storage'
+  pod 'PayPal-iOS-SDK'
+  pod 'FBSDKLoginKit'
+  pod 'Bolts'
+  pod 'SwiftyJSON'
+  pod 'Firebase/Storage'
 
 end
 
@@ -26,7 +32,12 @@ target 'PostMishoneTests' do
   pod 'Firebase/Messaging'
   pod 'SVProgressHUD'
   pod 'GoogleSignIn'
-
+  pod 'Firebase/Storage'
+  pod 'PayPal-iOS-SDK'
+  pod 'FBSDKLoginKit'
+  pod 'Bolts'
+  pod 'SwiftyJSON'
+  pod 'Firebase/Storage'
 
 end
 

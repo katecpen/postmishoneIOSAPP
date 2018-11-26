@@ -1,0 +1,6 @@
+module Pods_PostMishoneTests {
+  umbrella header "Pods-PostMishoneTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

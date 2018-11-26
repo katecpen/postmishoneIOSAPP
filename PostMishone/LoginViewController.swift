@@ -9,8 +9,10 @@
 import UIKit
 import Firebase
 import GoogleSignIn
+import FBSDKLoginKit
+import SwiftyJSON
 
-class LoginViewController : UIViewController, GIDSignInUIDelegate {
+class LoginViewController : UIViewController, GIDSignInUIDelegate, FBSDKLoginButtonDelegate {
     @IBOutlet weak var emailTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     
@@ -19,6 +21,11 @@ class LoginViewController : UIViewController, GIDSignInUIDelegate {
         GIDSignIn.sharedInstance().uiDelegate = self
         view.accessibilityIdentifier = "LoginViewController"
         
+        
+        let button = FBSDKLoginButton()
+        view.addSubview(button)
+        button.frame = CGRect(x: 16, y: 450, width: view.frame.width - 32, height: 28 )
+        button.delegate = self
         
         setupGoogleButtons()
     }
@@ -48,6 +55,61 @@ class LoginViewController : UIViewController, GIDSignInUIDelegate {
         }
 
         
+    }
+    
+    
+    func loginButton(_ loginButton: FBSDKLoginButton!, didCompleteWith result: FBSDKLoginManagerLoginResult!, error: Error!) {
+        
+        if error != nil {
+            print(error.localizedDescription)
+            return
+        } else if result.isCancelled {
+            print("Facebook login cancelled")
+            self.navigationController?.popViewController(animated: false)
+        } else {
+            
+            let credential = FacebookAuthProvider.credential(withAccessToken: FBSDKAccessToken.current().tokenString)
+            Auth.auth().signInAndRetrieveData(with: credential) { (authResult, err) in
+                if err != nil {
+                    print("Problem authenticating with firebase")
+                    return
+                }
+                // User is signed in
+                FBSDKGraphRequest(graphPath: "/me", parameters: ["fields": "id, name, email, picture.width(480).height(480)"])?.start {
+                    (connection, result, err) in
+                    if err != nil {
+                        print("Failed to start graph request", err)
+                        return
+                    }
+                    let json = JSON(result)
+                    print(json)
+                    let userID = Auth.auth().currentUser!.uid
+                    let values = ["email": json["email"].stringValue, "username": json["name"].stringValue] as [String : Any] // TODO: add username (change password)
+                    self.registerUserIntoDatabase(userID, values: values as [String : AnyObject])
+                }
+                
+                print("Facebook log in success")
+                self.navigationController?.popViewController(animated: false)
+                
+            }
+        }
+    }
+    
+    private func registerUserIntoDatabase(_ userID: String, values: [String: AnyObject]) {
+        // Adding User Info
+        let ref = Database.database().reference()
+        let usersReference = ref.child("Users").child(userID)
+        
+        usersReference.updateChildValues(values, withCompletionBlock: { (err, ref) in
+            if err != nil {
+                print(err!)
+                return
+            }
+        })
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBSDKLoginButton!) {
+        print("Facebook logged out")
     }
     
     

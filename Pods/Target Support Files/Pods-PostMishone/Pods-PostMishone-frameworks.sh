@@ -143,22 +143,30 @@ strip_invalid_archs() {
 
 
 if [[ "$CONFIGURATION" == "Debug" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Bolts-framework/Bolts.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FBSDKCoreKit-framework/FBSDKCoreKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FBSDKLoginKit-framework/FBSDKLoginKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GTMOAuth2-framework/GTMOAuth2.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-framework/GTMSessionFetcher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-framework/GoogleToolboxForMac.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities-framework/GoogleUtilities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Protobuf-framework/Protobuf.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SVProgressHUD-framework/SVProgressHUD.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON-framework/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library-framework/leveldb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb-framework/nanopb.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
+  install_framework "${BUILT_PRODUCTS_DIR}/Bolts-framework/Bolts.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FBSDKCoreKit-framework/FBSDKCoreKit.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/FBSDKLoginKit-framework/FBSDKLoginKit.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GTMOAuth2-framework/GTMOAuth2.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GTMSessionFetcher-framework/GTMSessionFetcher.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac-framework/GoogleToolboxForMac.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/GoogleUtilities-framework/GoogleUtilities.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/Protobuf-framework/Protobuf.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/SVProgressHUD-framework/SVProgressHUD.framework"
+  install_framework "${BUILT_PRODUCTS_DIR}/SwiftyJSON-framework/SwiftyJSON.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/leveldb-library-framework/leveldb.framework"
   install_framework "${BUILT_PRODUCTS_DIR}/nanopb-framework/nanopb.framework"
 fi
