@@ -10,14 +10,47 @@ import Firebase
 import MapKit
 import CoreLocation
 
-class DescribeMissionViewController: UIViewController {
+class DescribeMissionViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+    
     var ref: DatabaseReference!
     var latitude = 0.0
     var longitude = 0.0
+    var selectedPriority : String?
+    var missionCategories = ["Deliver", "Partner", "Rent", "Other"]
+    var myPickerView : UIPickerView!
+
     
     @IBOutlet weak var missionName: UITextField!
     @IBOutlet weak var missionDescription: UITextField!
     @IBOutlet weak var reward: UITextField!
+    @IBOutlet weak var missionCategory: UITextField!
+    
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
+        return 1
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+        return missionCategories.count
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+        return missionCategories[row]
+    }
+    
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+        self.missionCategory.text = missionCategories[row]
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        self.pickUp(missionCategory)
+    }
+    
+    func createPickerView() {
+        let pickerView = UIPickerView()
+        pickerView.delegate = self
+        
+        missionCategory.inputView = pickerView
+    }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -30,6 +63,8 @@ class DescribeMissionViewController: UIViewController {
         missionName.delegate = self
         missionDescription.delegate = self
         reward.delegate = self
+
+        pickUp(missionCategory) // Load picker view (to select categories)
         
         // Do any additional setup after loading the view.
         ref = Database.database().reference() // Firebase Reference
@@ -48,11 +83,12 @@ class DescribeMissionViewController: UIViewController {
         print("missionNameText: ", missionName.text!)
         print("missionDescription: ", missionDescription.text!)
         print("reward: ", reward.text!)
+        print("category: ", missionCategory.text!)
    
         
         let missionID = ref.child("PostedMissions").childByAutoId().key
         // Add to https://postmishone.firebaseio.com/PostedMissions
-        ref?.child("PostedMissions").child(missionID!).setValue(["Latitude": latitude, "Longitude": longitude, "UserID": userID, "timeStamp": timeStamp, "missionName": missionName.text!, "missionDescription": missionDescription.text!, "reward": reward.text!, "missionID": missionID!])
+        ref?.child("PostedMissions").child(missionID!).setValue(["Latitude": latitude, "Longitude": longitude, "UserID": userID, "timeStamp": timeStamp, "missionName": missionName.text!, "missionDescription": missionDescription.text!, "reward": reward.text!, "missionID": missionID!, "category" : missionCategory.text!])
         
         // Add to https://postmishone.firebaseio.com/users/(currentuserid)/
         ref?.child("Users").child(userID).child("MissionPosts").child(missionID!).setValue(missionID!)
@@ -64,15 +100,58 @@ class DescribeMissionViewController: UIViewController {
         self.navigationController?.popViewController(animated: true)
     }
     
-}
-
-// Make keyboard close on return key press
-extension DescribeMissionViewController : UITextFieldDelegate {
     
+    // Make keyboard close on return key press
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        
         textField.resignFirstResponder()
         return true
     }
+    
+    func dismissPickerView() {
+        let toolBar = UIToolbar()
+
+        let doneButton = UIBarButtonItem(title: "Done", style: UIBarButtonItem.Style.plain, target: self, action: "donePicker")
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItem.Style.plain, target: self, action: "donePicker")
+        
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        missionCategory.inputAccessoryView = toolBar
+
+    }
+    
+
+    func pickUp(_ textField : UITextField){
+        // UIPickerView
+        self.myPickerView = UIPickerView(frame:CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: 216))
+        self.myPickerView.delegate = self
+        self.myPickerView.dataSource = self
+        self.myPickerView.backgroundColor = UIColor.white
+        textField.inputView = self.myPickerView
+        
+        // ToolBar
+        let toolBar = UIToolbar()
+        toolBar.barStyle = .default
+        toolBar.isTranslucent = true
+        toolBar.tintColor = UIColor(red: 92/255, green: 216/255, blue: 255/255, alpha: 1)
+        toolBar.sizeToFit()
+        
+        // Adding Button ToolBar
+        let doneButton = UIBarButtonItem(title: "Done", style: .plain, target: self, action: #selector(DescribeMissionViewController.doneClick))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(DescribeMissionViewController.cancelClick))
+        toolBar.setItems([cancelButton, spaceButton, doneButton], animated: false)
+        toolBar.isUserInteractionEnabled = true
+        textField.inputAccessoryView = toolBar
+        
+    }
+    
+    @objc func doneClick() {
+        missionCategory.resignFirstResponder()
+    }
+    @objc func cancelClick() {
+        missionCategory.resignFirstResponder()
+    }
+    
     
 }
