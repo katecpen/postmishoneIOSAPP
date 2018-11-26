@@ -1,4 +1,4 @@
+os: osx
+osx_image: xcode10.1
 language: swift
-xcode_project: PostMishone.xcodeproj
-xcode_scheme: PostMishoneUITests
-xcode_destination: platform=iOS Simulator,OS=11.3,name=iPhone 7
+script: xcodebuild
