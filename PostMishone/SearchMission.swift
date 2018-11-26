@@ -15,6 +15,7 @@ class SearchMission: UIViewController {
     var searchedMissions = [Mission]()
     var didSelectCategory = false
     var selectedCategory = ""
+    var selectedMission = Mission(missionName: "", missionDescription: "", missionReward: "", posterID: "", missionCategory: "Other", reward: "", missionID: "", latitude: 0.0, longitude: 0.0)
     
     
     override func viewWillAppear(_ animated: Bool) {
@@ -42,6 +43,7 @@ class SearchMission: UIViewController {
     }
     
     
+    
 }
 
 extension SearchMission: UITableViewDataSource, UITableViewDelegate {
@@ -55,7 +57,25 @@ extension SearchMission: UITableViewDataSource, UITableViewDelegate {
         cell?.detailTextLabel?.text = searchedMissions[indexPath.row].missionDescription
         return cell!
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        selectedMission = searchedMissions[indexPath.row]
+        performSegue(withIdentifier: "toMissionDescription", sender: self)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destination = segue.destination as? MissionDescriptionViewController
+        destination?.missionTitle = selectedMission.missionName
+        destination?.subtitle = selectedMission.missionDescription
+        destination?.posterID = selectedMission.posterID
+        destination?.reward = selectedMission.reward
+        destination?.missionID = selectedMission.missionID
+        destination?.latitude = selectedMission.latitude
+        destination?.longitude = selectedMission.longitude
+    }
 }
+
+
 
 extension SearchMission: UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
@@ -65,15 +85,15 @@ extension SearchMission: UISearchBarDelegate {
                 for child in snapshot.children {
                     print("FOR LOOP")
                     let snap = child as! DataSnapshot
-                    if let dic = snap.value as? [String:Any], let missionName = dic["missionName"] as? String, let missionDescription = dic["missionDescription"] as? String, let reward = dic["reward"] as? String, let category = dic["category"] as? String {
+                    if let dic = snap.value as? [String:Any], let missionName = dic["missionName"] as? String, let missionDescription = dic["missionDescription"] as? String, let reward = dic["reward"] as? String, let category = dic["category"] as? String, let posterID = dic["UserID"] as? String, let missionID = dic["missionID"] as? String, let latitude = dic["Latitude"] as? Double, let longitude = dic["Longitude"] as? Double {
                         if(self.didSelectCategory) {
                             print("didSelectCategory")
                             if(self.selectedCategory == category) {
-                                self.searchedMissions.append(Mission(missionName: missionName, missionDescription: missionDescription, missionReward: reward, missionCategory: category))
+                                self.searchedMissions.append(Mission(missionName: missionName, missionDescription: missionDescription, missionReward: reward, posterID: posterID, missionCategory: category, reward: reward, missionID: missionID, latitude: latitude, longitude: longitude))
                             }
                         }
                         else {
-                            self.searchedMissions.append(Mission(missionName: missionName, missionDescription: missionDescription, missionReward: reward, missionCategory: category))
+                                self.searchedMissions.append(Mission(missionName: missionName, missionDescription: missionDescription, missionReward: reward, posterID: posterID, missionCategory: category, reward: reward, missionID: missionID, latitude: latitude, longitude: longitude))
                         }
 
 
@@ -98,43 +118,36 @@ extension SearchMission: UISearchBarDelegate {
                 break
             case 1:
                 print("deliver")
-                searchBar.endEditing(true)
-                searchedMissions.removeAll()
-                searchBar.text = ""
-                tableView.reloadData()
-                didSelectCategory = true
+                changedCategoryReconfig()
                 selectedCategory = "Deliver"
 
             case 2:
                 print("partner")
-                searchBar.endEditing(true)
-                searchedMissions.removeAll()
-                searchBar.text = ""
-                tableView.reloadData()
-                didSelectCategory = true
+                changedCategoryReconfig()
                 selectedCategory = "Partner"
 
             case 3:
                 print("rent")
-                searchBar.endEditing(true)
-                searchedMissions.removeAll()
-                searchBar.text = ""
-                tableView.reloadData()
-                didSelectCategory = true
+                changedCategoryReconfig()
                 selectedCategory = "Rent"
             case 4:
                 print("other")
-                searchBar.endEditing(true)
-                searchedMissions.removeAll()
-                searchBar.text = ""
-                tableView.reloadData()
-                didSelectCategory = true
+                changedCategoryReconfig()
                 selectedCategory = "Other"
             default:
                 didSelectCategory = false
                 break
             }
         }
+    
+    func changedCategoryReconfig() {
+        searchBar.endEditing(true)
+        searchedMissions.removeAll()
+        searchBar.text = ""
+        tableView.reloadData()
+        didSelectCategory = true
+
+    }
     
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
         searchBar.endEditing(true)
@@ -152,11 +165,21 @@ class Mission {
     let missionDescription: String
     let missionReward: String
     let missionCategory: String
+    let posterID: String
+    let reward: String
+    let missionID: String
+    let latitude: Double
+    let longitude: Double
     
-    init(missionName: String, missionDescription: String, missionReward: String, missionCategory: String) {
+    init(missionName: String, missionDescription: String, missionReward: String, posterID: String, missionCategory: String, reward: String, missionID: String, latitude: Double, longitude: Double ) {
         self.missionName = missionName
         self.missionDescription = missionDescription
         self.missionReward = missionReward
         self.missionCategory = missionCategory
+        self.posterID = posterID
+        self.reward = reward
+        self.missionID = missionID
+        self.latitude = latitude
+        self.longitude = longitude
     }
 }

@@ -54,6 +54,7 @@ class MyMissionsTableViewController: UITableViewController {
         return cell
     }
     
+    // Bring user to ViewMyMission view controller based on the mission on list they selected
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         selectedMission = missionIDS[indexPath.row]
         print(selectedMission)
