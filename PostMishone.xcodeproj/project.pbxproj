@@ -14,6 +14,17 @@
 		57073CF521AB675200EAAC02 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57073CEF21AB675200EAAC02 /* Extensions.swift */; };
 		57073CF621AB675200EAAC02 /* ChatTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57073CF021AB675200EAAC02 /* ChatTableViewController.swift */; };
 		57073CF721AB675200EAAC02 /* NewMessageTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57073CF121AB675200EAAC02 /* NewMessageTableViewController.swift */; };
+		57073D0621AB8D6600EAAC02 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57073CFD21AB8D6600EAAC02 /* AudioToolbox.framework */; };
+		57073D0721AB8D6600EAAC02 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57073CFE21AB8D6600EAAC02 /* MobileCoreServices.framework */; };
+		57073D0821AB8D6600EAAC02 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57073CFF21AB8D6600EAAC02 /* SystemConfiguration.framework */; };
+		57073D0921AB8D6600EAAC02 /* CoreMedia.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57073D0021AB8D6600EAAC02 /* CoreMedia.framework */; };
+		57073D0A21AB8D6600EAAC02 /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57073D0121AB8D6600EAAC02 /* CoreLocation.framework */; };
+		57073D0B21AB8D6600EAAC02 /* Accelerate.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57073D0221AB8D6600EAAC02 /* Accelerate.framework */; };
+		57073D0C21AB8D6600EAAC02 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57073D0321AB8D6600EAAC02 /* MessageUI.framework */; };
+		57073D0D21AB8D6600EAAC02 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57073D0421AB8D6600EAAC02 /* AVFoundation.framework */; };
+		57073D0E21AB8D6600EAAC02 /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 57073D0521AB8D6600EAAC02 /* SafariServices.framework */; };
+		57073D5021AB9C7B00EAAC02 /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57073D4F21AB9C7B00EAAC02 /* PaymentViewController.swift */; };
+		57073D5221AB9C8E00EAAC02 /* PayPal-iOS-SDK-Sample-App-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 57073D5121AB9C8E00EAAC02 /* PayPal-iOS-SDK-Sample-App-Info.plist */; };
 		57B53330218EE2CD004C89B4 /* MissionDescriptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B5332F218EE2CD004C89B4 /* MissionDescriptionViewController.swift */; };
 		57B533322192D743004C89B4 /* BaseTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57B533312192D743004C89B4 /* BaseTabBarController.swift */; };
 		57B533342192DCD6004C89B4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 57B533332192DCD6004C89B4 /* Main.storyboard */; };
@@ -65,6 +76,18 @@
 		57073CEF21AB675200EAAC02 /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		57073CF021AB675200EAAC02 /* ChatTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatTableViewController.swift; sourceTree = "<group>"; };
 		57073CF121AB675200EAAC02 /* NewMessageTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewMessageTableViewController.swift; sourceTree = "<group>"; };
+		57073CF821AB8BF000EAAC02 /* PostMishone-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "PostMishone-Bridging-Header.h"; sourceTree = "<group>"; };
+		57073CFD21AB8D6600EAAC02 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		57073CFE21AB8D6600EAAC02 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		57073CFF21AB8D6600EAAC02 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		57073D0021AB8D6600EAAC02 /* CoreMedia.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMedia.framework; path = System/Library/Frameworks/CoreMedia.framework; sourceTree = SDKROOT; };
+		57073D0121AB8D6600EAAC02 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		57073D0221AB8D6600EAAC02 /* Accelerate.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accelerate.framework; path = System/Library/Frameworks/Accelerate.framework; sourceTree = SDKROOT; };
+		57073D0321AB8D6600EAAC02 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		57073D0421AB8D6600EAAC02 /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = System/Library/Frameworks/AVFoundation.framework; sourceTree = SDKROOT; };
+		57073D0521AB8D6600EAAC02 /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		57073D4F21AB9C7B00EAAC02 /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
+		57073D5121AB9C8E00EAAC02 /* PayPal-iOS-SDK-Sample-App-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "PayPal-iOS-SDK-Sample-App-Info.plist"; sourceTree = "<group>"; };
 		57B5332F218EE2CD004C89B4 /* MissionDescriptionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MissionDescriptionViewController.swift; sourceTree = "<group>"; };
 		57B533312192D743004C89B4 /* BaseTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseTabBarController.swift; sourceTree = "<group>"; };
 		57B533332192DCD6004C89B4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
@@ -103,6 +126,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				57073D0621AB8D6600EAAC02 /* AudioToolbox.framework in Frameworks */,
+				57073D0721AB8D6600EAAC02 /* MobileCoreServices.framework in Frameworks */,
+				57073D0821AB8D6600EAAC02 /* SystemConfiguration.framework in Frameworks */,
+				57073D0921AB8D6600EAAC02 /* CoreMedia.framework in Frameworks */,
+				57073D0A21AB8D6600EAAC02 /* CoreLocation.framework in Frameworks */,
+				57073D0B21AB8D6600EAAC02 /* Accelerate.framework in Frameworks */,
+				57073D0C21AB8D6600EAAC02 /* MessageUI.framework in Frameworks */,
+				57073D0D21AB8D6600EAAC02 /* AVFoundation.framework in Frameworks */,
+				57073D0E21AB8D6600EAAC02 /* SafariServices.framework in Frameworks */,
 				0C8CDED867CC11C62EF709E7 /* Pods_PostMishone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,6 +195,8 @@
 				57DA65EC2173628E008B9E06 /* LaunchScreen.storyboard */,
 				57DA65F921736532008B9E06 /* MainNavigationController.swift */,
 				57DA65FB21736538008B9E06 /* LoginViewController.swift */,
+				57073D4F21AB9C7B00EAAC02 /* PaymentViewController.swift */,
+				57073D5121AB9C8E00EAAC02 /* PayPal-iOS-SDK-Sample-App-Info.plist */,
 				57DA65FF2173716D008B9E06 /* RegisterViewController.swift */,
 				57DA66042173E27C008B9E06 /* MainAppScreen.swift */,
 				57DA66062173E71A008B9E06 /* MainViewController.swift */,
@@ -177,6 +211,7 @@
 				57DA66032173DCFE008B9E06 /* PostMishone.entitlements */,
 				6C472E5421A0DD37004BF060 /* GoogleService-Info.plist */,
 				57DA65EF2173628E008B9E06 /* Info.plist */,
+				57073CF821AB8BF000EAAC02 /* PostMishone-Bridging-Header.h */,
 			);
 			path = PostMishone;
 			sourceTree = "<group>";
@@ -184,6 +219,15 @@
 		57E3193D8AEDDE5E51448767 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				57073D0221AB8D6600EAAC02 /* Accelerate.framework */,
+				57073CFD21AB8D6600EAAC02 /* AudioToolbox.framework */,
+				57073D0421AB8D6600EAAC02 /* AVFoundation.framework */,
+				57073D0121AB8D6600EAAC02 /* CoreLocation.framework */,
+				57073D0021AB8D6600EAAC02 /* CoreMedia.framework */,
+				57073D0321AB8D6600EAAC02 /* MessageUI.framework */,
+				57073CFE21AB8D6600EAAC02 /* MobileCoreServices.framework */,
+				57073D0521AB8D6600EAAC02 /* SafariServices.framework */,
+				57073CFF21AB8D6600EAAC02 /* SystemConfiguration.framework */,
 				ED0D737BD60431C697C0D242 /* Pods_PostMishone.framework */,
 				285096C4932F1E1BD0F4A1BB /* libPods-PostMishoneTests.a */,
 			);
@@ -292,6 +336,7 @@
 				TargetAttributes = {
 					57DA65DF2173628C008B9E06 = {
 						CreatedOnToolsVersion = 10.0;
+						LastSwiftMigration = 1010;
 						SystemCapabilities = {
 							com.apple.Keychain = {
 								enabled = 1;
@@ -335,6 +380,7 @@
 			files = (
 				57DA65EE2173628E008B9E06 /* LaunchScreen.storyboard in Resources */,
 				6C472E5521A0DD37004BF060 /* GoogleService-Info.plist in Resources */,
+				57073D5221AB9C8E00EAAC02 /* PayPal-iOS-SDK-Sample-App-Info.plist in Resources */,
 				57DA65EB2173628E008B9E06 /* Assets.xcassets in Resources */,
 				57B533342192DCD6004C89B4 /* Main.storyboard in Resources */,
 			);
@@ -523,6 +569,7 @@
 				57B5333A2192F1E4004C89B4 /* MyMissionsTableViewController.swift in Sources */,
 				57DA660B2173F0FD008B9E06 /* SettingsViewController.swift in Sources */,
 				57073CF621AB675200EAAC02 /* ChatTableViewController.swift in Sources */,
+				57073D5021AB9C7B00EAAC02 /* PaymentViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -691,6 +738,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PostMishone/PostMishone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7698B5F9DT;
@@ -702,6 +750,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vitol.PostMishone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PostMishone/PostMishone-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -713,6 +763,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ALLOW_NON_MODULAR_INCLUDES_IN_FRAMEWORK_MODULES = YES;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = PostMishone/PostMishone.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 7698B5F9DT;
@@ -724,6 +775,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.vitol.PostMishone;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "PostMishone/PostMishone-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
