@@ -16,7 +16,7 @@ class DescribeMissionViewController: UIViewController, UIPickerViewDataSource, U
     var latitude = 0.0
     var longitude = 0.0
     var selectedPriority : String?
-    var missionCategories = ["Deliver", "Partner", "Rent", "Other"]
+    var missionCategories = ["", "Deliver", "Partner", "Rent", "Other"]
     var myPickerView : UIPickerView!
 
     
@@ -72,32 +72,87 @@ class DescribeMissionViewController: UIViewController, UIPickerViewDataSource, U
     
     // MARK: POSTING MISSION
     @IBAction func postMissionPressed(_ sender: Any) {
-        let userID = Auth.auth().currentUser!.uid
-        let timeStamp = Int(NSDate.timeIntervalSinceReferenceDate*1000)
+        guard let mName = missionName.text else { return }
+        guard let mDescription = missionDescription.text else { return }
+        guard let mReward = reward.text else {return}
+        guard let mCategory = missionCategory.text else {return}
         
-        print("Describe Mission View Controller:")
-        print("lat: ", latitude)
-        print("long: ", longitude)
-        print("userID: ", userID)
-        print("timeStamp: ", timeStamp)
-        print("missionNameText: ", missionName.text!)
-        print("missionDescription: ", missionDescription.text!)
-        print("reward: ", reward.text!)
-        print("category: ", missionCategory.text!)
-   
-        
-        let missionID = ref.child("PostedMissions").childByAutoId().key
-        // Add to https://postmishone.firebaseio.com/PostedMissions
-        ref?.child("PostedMissions").child(missionID!).setValue(["Latitude": latitude, "Longitude": longitude, "UserID": userID, "timeStamp": timeStamp, "missionName": missionName.text!, "missionDescription": missionDescription.text!, "reward": reward.text!, "missionID": missionID!, "category" : missionCategory.text!])
-        
-        // Add to https://postmishone.firebaseio.com/users/(currentuserid)/
-        ref?.child("Users").child(userID).child("MissionPosts").child(missionID!).setValue(missionID!)
-        
-        
-        
-        print("Mission Posted!")
-        
-        self.navigationController?.popViewController(animated: true)
+        if(mName.count == 0) {
+            
+            var nameError = UIAlertController(title: "Error", message: "Please specify mission name.", preferredStyle: UIAlertController.Style.alert);
+            
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (Action) in
+                print("OK button tapped")
+            };
+            
+            nameError.addAction(okAction);
+            
+            self.present(nameError, animated: true, completion: nil);
+            
+        } else if(mDescription.count == 0) {
+            
+            var dError = UIAlertController(title: "Error", message: "Please enter mission description.", preferredStyle: UIAlertController.Style.alert);
+            
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (Action) in
+                print("OK button tapped")
+            };
+            
+            dError.addAction(okAction);
+            
+            self.present(dError, animated: true, completion: nil);
+            
+        } else if(Int(mReward) == nil) {
+            
+            var rError = UIAlertController(title: "Error", message: "Please enter numbers only for reward.", preferredStyle: UIAlertController.Style.alert);
+            
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (Action) in
+                print("OK button tapped")
+            };
+            
+            rError.addAction(okAction);
+            
+            self.present(rError, animated: true, completion: nil);
+            
+        } else if(mCategory.count == 0) {
+            
+            var cError = UIAlertController(title: "Error", message: "Please enter category for mission.", preferredStyle: UIAlertController.Style.alert);
+            
+            let okAction = UIAlertAction(title: "OK", style: UIAlertAction.Style.default) { (Action) in
+                print("OK button tapped")
+            };
+            
+            cError.addAction(okAction);
+            
+            self.present(cError, animated: true, completion: nil);
+            
+        } else {
+            let userID = Auth.auth().currentUser!.uid
+            let timeStamp = Int(NSDate.timeIntervalSinceReferenceDate*1000)
+            
+            print("Describe Mission View Controller:")
+            print("lat: ", latitude)
+            print("long: ", longitude)
+            print("userID: ", userID)
+            print("timeStamp: ", timeStamp)
+            print("missionNameText: ", missionName.text!)
+            print("missionDescription: ", missionDescription.text!)
+            print("reward: ", reward.text!)
+            print("category: ", missionCategory.text!)
+            
+            
+            let missionID = ref.child("PostedMissions").childByAutoId().key
+            // Add to https://postmishone.firebaseio.com/PostedMissions
+            ref?.child("PostedMissions").child(missionID!).setValue(["Latitude": latitude, "Longitude": longitude, "UserID": userID, "timeStamp": timeStamp, "missionName": missionName.text!, "missionDescription": missionDescription.text!, "reward": reward.text!, "missionID": missionID!, "category" : missionCategory.text!])
+            
+            // Add to https://postmishone.firebaseio.com/users/(currentuserid)/
+            ref?.child("Users").child(userID).child("MissionPosts").child(missionID!).setValue(missionID!)
+            
+            
+            
+            print("Mission Posted!")
+            
+            self.navigationController?.popViewController(animated: true)
+        }
     }
     
     
